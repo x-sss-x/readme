@@ -1,4 +1,3 @@
-import { formatDistanceToNow } from "date-fns";
 import Link from "next/link";
 
 export default async function Home() {

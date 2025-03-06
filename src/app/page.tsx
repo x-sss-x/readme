@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+interface Blog {
+  id: string;
+  title: string;
+  content: string;
+}
+
 export default async function Home() {
   const response = await fetch("https://freefakeapi.io/api/posts", {
     method: "GET",
@@ -12,7 +18,7 @@ export default async function Home() {
         README
       </h1>
 
-      {blogs.map((blog: any) => (
+      {blogs.map((blog: Blog) => (
         <Link href={`/blog/${blog.id}`} key={blog.id}>
           <div className="py-4 px-4 rounded-lg hover:cursor-pointer transition-all duration-200 space-y-2 hover:bg-white/10">
             <div>
